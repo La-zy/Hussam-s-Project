@@ -2,9 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/nav_home"
+        android:icon="@mipmap/baseline_home_black_18dp"
         android:title="Home" />
-    <item android:id="@+id/nav_latest"
-        android:title="Latest" />
-    <item android:id="@+id/nav_browse"
-        android:title="Browse" />
+
+    <item android:id="@+id/nav_categories"
+        android:icon="@mipmap/baseline_category_black_18dp"
+        android:title="Categories" />
+
+    <item android:id="@+id/nav_search"
+        android:icon="@mipmap/baseline_search_black_18dp"
+        android:title="Search" />
 </menu>
