@@ -1,7 +1,10 @@
 package com.example.boo.testapp;
 
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,6 +19,9 @@ public class Categories extends AppCompatActivity {
     String[] DESCRIPTIONS = {"Fast Food, Arabic Food, Italian Food. Find offers in your favourite restaurant now!",
                             "Book a room in one of Qatar Hotels at the perfect time with the perfect offer!"};
 
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +31,27 @@ public class Categories extends AppCompatActivity {
 
         CustomAdapter customAdapter = new CustomAdapter();
         listview.setAdapter(customAdapter);
+
+        ///////
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.DrawerLayout);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     class CustomAdapter extends BaseAdapter {
 
