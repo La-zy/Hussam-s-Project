@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_desp"
+        android:icon="@mipmap/description"
+        android:title="Description" />
+
+    <item android:id="@+id/nav_call"
+        android:icon="@mipmap/call"
+        android:title="Call" />
+
+    <item android:id="@+id/nav_email"
+        android:icon="@mipmap/email"
+        android:title="Email" />
+
+    <item android:id="@+id/nav_sms"
+        android:icon="@mipmap/sms"
+        android:title="SMS" />
+</menu>
